@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brandbook — Spine Unit by Sérgio Salvador</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* Specific Organza Layouts */
         .intro-img-container {
@@ -47,7 +48,13 @@
     </style>
 </head>
 <body>
+    <!-- 🔄 BRAND SWITCHER (Top Right) -->
+    <div id="brand-switcher" class="brand-switcher" data-brand="spine">
+        <button class="switch-btn active" onclick="switchBrand('spine')">Spine Unit</button>
+        <button class="switch-btn" onclick="switchBrand('sergio')">Sérgio Salvador</button>
+    </div>
 
+<div id="spine-brandbook" class="brandbook-wrapper active">
 <div class="brandbook">
     <!-- Rest of the sections... (I'll keep the current sections) -->
 
@@ -1008,45 +1015,923 @@
 
 </div>
 
-<script>
-    // Intersection Observer for scroll animations and nav highlighting
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                
-                // Highlight nav link
-                const id = entry.target.getAttribute('id');
-                navLinks.forEach(link => {
-                    link.style.opacity = link.getAttribute('href').substring(1) === id ? '1' : '0.4';
-                });
-            }
-        });
-    }, { threshold: 0.5 });
-
-    sections.forEach(section => observer.observe(section));
-
-    // Copy HEX functionality
-    const hexBlocks = document.querySelectorAll('.hex-value, .tonal-box');
-    hexBlocks.forEach(block => {
-        block.style.cursor = 'pointer';
-        block.title = 'Click to copy HEX';
-        block.addEventListener('click', () => {
-            const hex = block.innerText.includes('#') ? block.innerText : block.style.backgroundColor;
-            // Simplified for the demo: if it's a box with background, we just alert
-            const value = block.classList.contains('hex-value') ? block.innerText : 'Color Copied!';
+<div id="sergio-brandbook" class="brandbook-wrapper">
+    <div class="brandbook">
+        
+        <!-- 01 CAPA -->
+        <section class="bg-navy" id="sergio-capa" style="justify-content: space-between; overflow: hidden; background-color: #0B1A33;">
+            <div class="header">
+                <span style="letter-spacing: 2px; font-size: 12px; font-weight: 500; font-family: 'Afacad';">PERSONAL BRAND GUIDELINES v.01</span>
+            </div>
             
-            navigator.clipboard.writeText(block.innerText).then(() => {
-                const originalText = block.innerText;
-                block.innerText = 'COPIED!';
-                setTimeout(() => { block.innerText = originalText; }, 1000);
-            });
-        });
-    });
-</script>
+            <div class="organza-grid" style="align-items: center;">
+                <div style="grid-column: span 12;">
+                    <img src="id/id 2/logo-modo-escuro.png" alt="Logo" style="width: 320px; margin-bottom: 2rem;">
+                    <h1 style="font-size: 100px; margin: 0; line-height: 0.9; font-family: var(--font-heading); font-weight: 200;">SÉRGIO<br>SALVADOR</h1>
+                    <p style="font-size: 24px; font-weight: 300; opacity: 0.7; margin-top: 20px; font-family: 'Afacad'; text-transform: uppercase; letter-spacing: 4px;">Neurocirurgião</p>
+                </div>
+            </div>
 
+            <div class="footer" style="display: flex; justify-content: space-between; font-size: 12px; opacity: 0.5; font-family: 'Afacad';">
+                <div>© 2026 SÉRGIO SALVADOR</div>
+                <div>EXCELÊNCIA TÉCNICA COM OLHAR HUMANO</div>
+            </div>
+        </section>
+
+        <!-- 02 SUMÁRIO -->
+        <section id="sergio-sumario">
+            <div class="organza-grid">
+                <div style="grid-column: span 4;" class="v-line">
+                    <h3 style="padding-left: 20px; font-family: var(--font-heading); font-weight: 400;">01 SUMÁRIO</h3>
+                </div>
+                <div style="grid-column: span 8; padding-left: 40px;">
+                    <nav style="display: flex; flex-direction: column; gap: 10px; font-family: var(--font-heading); font-weight: 300; font-size: 20px;">
+                        <a href="#sergio-intro" style="color: inherit; text-decoration: none;">01 Introdução</a>
+                        <a href="#sergio-estratégia" style="color: inherit; text-decoration: none;">02 Estratégia</a>
+                        <a href="#sergio-tom-de-voz" style="color: inherit; text-decoration: none;">03 Tom de Voz</a>
+                        <a href="#sergio-logo-cover" style="color: inherit; text-decoration: none;">04 Logotipo</a>
+                        <a href="#sergio-typography" style="color: inherit; text-decoration: none;">05 Tipografia</a>
+                        <a href="#sergio-color-cover" style="color: inherit; text-decoration: none;">06 Cores</a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 INTRODUCTION -->
+        <section id="sergio-intro" style="padding: 0;">
+            <div class="organza-grid">
+                <div style="grid-column: span 6; padding: 80px; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="chapter-number" style="color: #D4AF37;">01</div>
+                    <h2 style="font-family: var(--font-heading);">INTRODUÇÃO</h2>
+                    <p class="fade-in" style="font-size: 20px; line-height: 1.6; max-width: 450px; margin-top: 20px; font-family: 'Afacad';">
+                        Sérgio Salvador é uma marca pessoal médica premium que une a mais alta autoridade em neurocirurgia com um posicionamento autoral e exclusivo.
+                        <br><br>
+                        Nossa essência reside na precisão absoluta do gesto técnico aliada à sensibilidade de quem entende que a medicina é, antes de tudo, um encontro entre seres humanos.
+                        <br><br>
+                        Autoridade. Precisão. Humanidade.
+                    </p>
+                </div>
+                <div class="intro-img-container" style="grid-column: span 6; background-image: url('id/id 2/aplicacao.png');"></div>
+            </div>
+        </section>
+
+        <!-- 04 STRATEGY (CAPA 02) -->
+        <section id="sergio-estratégia" class="bg-navy" style="background-color: #12264F;">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li class="active">Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li>Logotipo</li>
+                        <li>Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content strategy-cover">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <h3 style="font-size: 14px; letter-spacing: 2px; font-family: 'Afacad';">ESTRATÉGIA</h3>
+                        <div style="text-align: right; font-size: 11px; opacity: 0.6; font-family: 'Afacad';">
+                            2.1 Missão e Promessa<br>
+                            2.2 Visão Geral da Marca
+                        </div>
+                    </div>
+                    
+                    <div class="h-line"></div>
+                    <div class="number-big">02</div>
+                    <div class="title-bottom" style="font-weight: 200;">ESTRATÉGIA</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05 MISSÃO E PROMESSA (2.1) -->
+        <section id="sergio-missao-promessa">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li class="active">Missão e Promessa</li>
+                        <li>Tom de Voz</li>
+                        <li>Logotipo</li>
+                        <li>Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; font-family: var(--font-heading);">2.1</div>
+                        <h1 style="font-size: 32px; font-family: var(--font-heading);">MISSÃO E PROMESSA</h1>
+                    </div>
+
+                    <div class="content-cols">
+                        <div>
+                            <h4 style="font-family: var(--font-heading); font-weight: 500;">Missão</h4>
+                            <p style="font-family: 'Afacad'; font-size: 18px;">
+                                Traduzir a complexidade da neurociência em soluções humanas e seguras, devolvendo autonomia e qualidade de vida por meio de um cuidado ético e de alta precisão.
+                                <br><br>
+                                Transformar decisões científicas em atos de cuidado que devolvem ao paciente a normalidade de sua vida.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="font-family: var(--font-heading); font-weight: 500;">Promessa</h4>
+                            <p style="font-family: 'Afacad'; font-size: 18px;">
+                                Excelência técnica com olhar humano: a segurança de quem domina a tecnologia aliada à sensibilidade de quem entende o medo do paciente.
+                                <br><br>
+                                Oferecemos esperança fundamentada na ciência e o rigor técnico que cada vida exige.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 VISÃO GERAL DA MARCA (2.2) -->
+        <section id="sergio-visao-geral">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li class="active">Visão Geral da Marca</li>
+                        <li>Tom de Voz</li>
+                        <li>Logotipo</li>
+                        <li>Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; font-family: var(--font-heading);">2.2</div>
+                        <h1 style="font-size: 32px; font-family: var(--font-heading);">VISÃO GERAL DA MARCA</h1>
+                    </div>
+
+                    <div class="content-cols">
+                        <div>
+                            <h4 style="font-family: var(--font-heading); font-weight: 500;">O que fazemos<br>& Como geramos impacto</h4>
+                            <p style="font-family: 'Afacad'; font-size: 17px;">
+                                Sérgio Salvador atua com foco em precisão absoluta e autoridade técnica. O trabalho vai além do procedimento — buscamos oferecer uma jornada de segurança e clareza.
+                                <br><br>
+                                Unimos tecnologia de ponta com um olhar autoral, onde cada detalhe é conduzido sob a supervisão de um especialista que é referência em sua área.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="font-family: var(--font-heading); font-weight: 500;">Quem somos<br>& Por que existimos</h4>
+                            <p style="font-family: 'Afacad'; font-size: 17px;">
+                                Existimos para transformar complexidade em solução. Representamos a união entre ciência rigorosa e responsabilidade ética individual.
+                                <br><br>
+                                Sérgio Salvador é o rosto da neurocirurgia moderna, onde o conhecimento técnico avançado existe para servir ao bem-estar e à dignidade do paciente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 07 TOM DE VOZ (CAPA 03) -->
+        <section id="sergio-tom-de-voz" class="bg-teal" style="background-color: #D4AF37;">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li class="active">Tom de Voz</li>
+                        <li>Logotipo</li>
+                        <li>Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content strategy-cover">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <h3 style="font-size: 14px; letter-spacing: 2px; font-family: 'Afacad';">TOM DE VOZ</h3>
+                        <div style="text-align: right; font-size: 11px; opacity: 0.6; font-family: 'Afacad';">
+                            3.1 Características do Tom
+                        </div>
+                    </div>
+                    
+                    <div class="h-line"></div>
+                    <div class="number-big">03</div>
+                    <div class="title-bottom" style="font-size: 100px; font-weight: 200;">TOM DE VOZ</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 08 CARACTERÍSTICAS DO TOM (3.1) -->
+        <section id="sergio-tom-caracteristicas">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li class="active">Tom de Voz</li>
+                        <li>Logotipo</li>
+                        <li>Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; font-family: var(--font-heading);">3.1</div>
+                        <h1 style="font-size: 32px; font-family: var(--font-heading);">CARACTERÍSTICAS</h1>
+                    </div>
+
+                    <div class="content-cols">
+                        <div>
+                            <h4 style="font-family: var(--font-heading); font-weight: 500;">Como nos comunicamos</h4>
+                            <p style="font-family: 'Afacad'; font-size: 18px;">
+                                A comunicação é clara, objetiva e empática. Utilizamos uma linguagem direta que evita o distanciamento do "tecniquês" sem perder a autoridade.
+                                <br><br>
+                                Cada mensagem transmite segurança, serenidade e respeito. Somos acessíveis sem sacrificar o refinamento.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="font-family: var(--font-heading); font-weight: 500;">Como nos posicionamos</h4>
+                            <p style="font-family: 'Afacad'; font-size: 18px;">
+                                Posicionamo-nos como uma autoridade de referência que domina a técnica mais avançada. Nossa voz é firme, porém acolhedora.
+                                <br><br>
+                                Evitamos exageros e sensacionalismo. Nossa credibilidade nasce da verdade científica e da elegância no agir.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 09 LOGOTIPO (4.1) -->
+        <section id="sergio-nosso-logo">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li class="active">Logotipo</li>
+                        <li>Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; font-family: var(--font-heading);">4.1</div>
+                        <h1 style="font-size: 32px; font-family: var(--font-heading);">O LOGOTIPO</h1>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; padding: 40px;">
+                        <img src="id/id 2/logo-modo-claro.png" style="width: 500px; margin-bottom: 40px;">
+                        <div style="max-width: 600px; text-align: center;">
+                            <p style="font-size: 16px; line-height: 1.6; opacity: 0.6; font-family: 'Afacad';">
+                                O logotipo de Sérgio Salvador é uma extensão de sua identidade profissional: sólida, clara e sofisticada. O símbolo orgânico vertical reflete a anatomia com fluidez e precisão, reforçando a organicidade aliada ao rigor técnico.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10 VERSÕES DO LOGO (4.2) -->
+        <section id="sergio-logo-versoes">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li class="active">Logotipo</li>
+                        <li>Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; font-family: var(--font-heading);">4.2</div>
+                        <h1 style="font-size: 32px; font-family: var(--font-heading);">VERSÕES</h1>
+                    </div>
+
+                    <div class="logo-grid-v3" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 0; background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 4px; overflow: hidden;">
+                        <div style="grid-row: span 2; padding: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-right: 1px solid rgba(0,0,0,0.05);">
+                            <small style="letter-spacing: 2px; opacity: 0.4; font-weight: 700; margin-bottom: 40px; font-family: var(--font-body);">PRIMARY LOGO</small>
+                            <img src="id/id 2/logo-modo-claro.png" style="width: 320px;">
+                        </div>
+                        <div style="padding: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                            <small style="letter-spacing: 2px; opacity: 0.4; font-weight: 700; margin-bottom: 30px; font-family: var(--font-body);">BRANDMARK</small>
+                            <img src="id/id 2/icone-logo.png" style="width: 70px;">
+                        </div>
+                        <div style="padding: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <small style="letter-spacing: 2px; opacity: 0.4; font-weight: 700; margin-bottom: 30px; font-family: var(--font-body);">LOGOTYPE</small>
+                            <img src="id/id 2/logotype.png" style="width: 220px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11 CONSTRUÇÃO DO LOGO (4.3) -->
+        <section id="sergio-logo-construcao" class="bg-navy" style="background-color: #0B1A33;">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li class="active">Logotipo</li>
+                        <li>Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; color: #D4AF37; font-family: var(--font-heading);">4.3</div>
+                        <h1 style="font-size: 32px; color: #F4F1E8; font-family: var(--font-heading);">CONSTRUÇÃO DO LOGO</h1>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1;">
+                        <div style="width: 100%; max-width: 800px;">
+                             <img src="id/id 2/construcaomarca.png" style="width: 100%;">
+                        </div>
+                        <p style="margin-top: 40px; color: #F4F1E8; max-width: 600px; text-align: center; font-family: 'Afacad'; font-size: 16px; opacity: 0.7;">
+                            A construção da marca segue um rigor geométrico que emoldura um símbolo orgânico, simbolizando o domínio técnico (geometria) sobre a vida (curva).
+                        </p>
+
+                        <!-- LOGO TYPOGRAPHY SPECS -->
+                        <div style="margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; display: flex; gap: 60px; text-align: left; width: 100%; max-width: 600px; justify-content: center;">
+                            <div>
+                                <h4 style="font-size: 11px; letter-spacing: 2px; opacity: 0.4; margin-bottom: 10px; text-transform: uppercase;">Font do Logotipo</h4>
+                                <p style="font-size: 14px; color: #F4F1E8; margin: 0; font-family: 'MuseoModerno'; font-weight: 200;">Museo Moderno <span style="font-weight: 400;">Regular</span></p>
+                            </div>
+                            <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 40px;">
+                                <h4 style="font-size: 11px; letter-spacing: 2px; opacity: 0.4; margin-bottom: 10px; text-transform: uppercase;">Font do Slogan</h4>
+                                <p style="font-size: 14px; color: #F4F1E8; margin: 0; font-family: 'Afacad'; font-weight: 500;">Afacad Medium</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12 ÁREA DE PROTEÇÃO / TAMANHO (4.4) -->
+        <section id="sergio-logo-protecao" class="bg-offwhite" style="background-color: #F4F1E8;">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li class="active">Logotipo</li>
+                        <li>Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; color: #12264F; font-family: var(--font-heading);">4.4</div>
+                        <h1 style="font-size: 32px; font-family: var(--font-heading); color: #0B1A33;">PROTEÇÃO E TAMANHO</h1>
+                    </div>
+
+                    <div class="organza-grid" style="gap: 60px;">
+                        <div style="grid-column: span 7; background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 100px; position: relative;">
+                            <div class="protection-box" style="border-color: #D4AF37;">
+                                 <img src="id/id 2/logo-modo-claro.png" style="width: 200px; display: block;">
+                                 <div style="position: absolute; top: -15px; left: 50%; color: #D4AF37; font-size: 10px; font-weight: 700;">UNIT X</div>
+                            </div>
+                        </div>
+                        <div style="grid-column: span 5; display: flex; flex-direction: column; gap: 40px;">
+                            <div>
+                                <h4 style="font-size: 12px; letter-spacing: 1px; color: #0B1A33; font-family: 'Afacad'; opacity: 0.4;">TAMANHO MÍNIMO DIGITAL</h4>
+                                <div style="display: flex; align-items: center; gap: 20px; margin-top: 20px;">
+                                    <img src="id/id 2/icone-logo.png" style="width: 30px;">
+                                    <span style="font-size: 18px; font-weight: 600; font-family: var(--font-heading);">40 px</span>
+                                </div>
+                            </div>
+                            <p style="font-size: 14px; font-family: 'Afacad'; opacity: 0.7;">
+                                Para preservar a elegância dos traços finos da tipografia, o logotipo não deve ser reduzido abaixo do limite estabelecido.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13 USO DO LOGO (4.5) -->
+        <section id="sergio-logo-uso">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li class="active">Logotipo</li>
+                        <li>Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; color: #D4AF37; font-family: var(--font-heading);">4.5</div>
+                        <h1 style="font-size: 32px; font-family: var(--font-heading); color: #0B1A33;">USO DO LOGO</h1>
+                    </div>
+
+                    <p style="font-size: 14px; opacity: 0.6; margin-bottom: 40px; font-family: 'Afacad'; max-width: 600px;">
+                        Para garantir o contraste e a legibilidade da marca, as versões do logotipo devem ser aplicadas conforme o fundo correspondente.
+                    </p>
+
+                    <div class="usage-grid-v2">
+                        <div class="usage-item" style="background: #fff; border: 1px solid rgba(0,0,0,0.03);">
+                            <small style="font-family: 'Afacad'; letter-spacing: 1px; font-weight: 700;">FUNDO CLARO (PRINCIPAL)</small>
+                            <img src="id/id 2/logo-modo-claro.png" style="width: 180px;">
+                        </div>
+                        <div class="usage-item" style="background: #D4AF37;">
+                            <small style="font-family: 'Afacad'; letter-spacing: 1px; font-weight: 700; color: #fff;">FUNDO DOURADO DOCTOR</small>
+                            <img src="id/id 2/logo-modo-escuro.png" style="width: 180px; filter: brightness(0) invert(1);">
+                        </div>
+                        <div class="usage-item" style="background: #0B1A33;">
+                            <small style="font-family: 'Afacad'; letter-spacing: 1px; font-weight: 700; color: #fff;">FUNDO MARINHO (PRIMÁRIO)</small>
+                            <img src="id/id 2/logo-modo-escuro.png" style="width: 180px;">
+                        </div>
+                        <div class="usage-item" style="background: #F4F1E8;">
+                            <small style="font-family: 'Afacad'; letter-spacing: 1px; font-weight: 700; color: #0B1A33;">FUNDO NEUTRO / BEGE</small>
+                            <img src="id/id 2/logo-modo-claro.png" style="width: 180px;">
+                        </div>
+                        <div class="usage-item" style="background: #000;">
+                            <small style="font-family: 'Afacad'; letter-spacing: 1px; font-weight: 700; color: #fff;">FUNDO PRETO</small>
+                            <img src="id/id 2/logo-modo-escuro.png" style="width: 180px;">
+                        </div>
+                        <div class="usage-item" style="background: #FAF9F6; border: 1px solid rgba(0,0,0,0.02);">
+                            <small style="font-family: 'Afacad'; letter-spacing: 1px; font-weight: 700; color: #0B1A33;">FUNDO VIBRANTE / APOIO</small>
+                            <img src="id/id 2/logo-modo-claro.png" style="width: 180px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 14 TIPOGRAFIA [CAPA 05] -->
+        <section id="sergio-typography-cover" class="bg-teal" style="background-color: #0B1A33; min-height: 100vh; overflow: hidden;">
+            <div class="sidebar-layout" style="height: 100%;">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li>Logotipo</li>
+                        <li class="active">Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content" style="display: flex; flex-direction: column; justify-content: space-between; height: 100vh; padding: 100px;">
+                    <div>
+                       <h4 style="font-size: 14px; letter-spacing: 2px; opacity: 0.8; font-family: 'Afacad'; color: #fff;">TIPOGRAFIA</h4>
+                       <div style="height: 1px; background: rgba(212, 175, 55, 0.4); margin: 20px 0; width: 60px;"></div>
+                    </div>
+                    <div style="display: flex; align-items: baseline; gap: 40px; color: #fff;">
+                        <div style="font-size: 160px; font-weight: 800; line-height: 0.8; opacity: 0.1; font-family: var(--font-heading);">05</div>
+                        <h1 style="font-size: 100px; margin: 0; line-height: 1; font-family: var(--font-heading); font-weight: 200;">TIPOGRAFIA</h1>
+                    </div>
+                    <div style="display: flex; gap: 60px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; font-family: 'Afacad'; color: #fff;">
+                        <span>5.1 Tipografia Primária</span>
+                        <span>5.2 Tipografia Secundária</span>
+                        <span>5.3 Hierarquia Tipográfica</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15 TIPOGRAFIA PRIMÁRIA (5.1) -->
+        <section id="sergio-typography-primary">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li>Logotipo</li>
+                        <li class="active">Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; font-family: var(--font-heading);">5.1</div>
+                        <h1 style="font-size: 32px; font-family: var(--font-heading);">TIPOGRAFIA PRIMÁRIA</h1>
+                    </div>
+
+                    <div style="display: flex; align-items: flex-end; gap: 40px; margin-bottom: 60px;">
+                        <h1 style="font-size: 110px; font-family: 'Poppins'; font-weight: 700; margin: 0; color: #0B1A33; line-height: 0.8;">Poppins</h1>
+                        <div style="font-size: 60px; font-family: 'Poppins'; font-weight: 300; opacity: 0.2;">Aa Bb Cc</div>
+                    </div>
+                    
+                    <div class="typeface-grid">
+                        <div class="weight-item">
+                            <small style="opacity: 0.4; letter-spacing: 1px; font-family: var(--font-body);">LIGHT 300</small>
+                            <div class="font-large" style="font-weight: 300; font-family: 'Poppins';">AaBbCc</div>
+                            <p style="font-size: 12px; opacity: 0.5; font-family: 'Poppins';">ABCDEFGHIJKLMN OPQRSTUVWXYZ</p>
+                        </div>
+                        <div class="weight-item">
+                            <small style="opacity: 0.4; letter-spacing: 1px; font-family: var(--font-body);">REGULAR 400</small>
+                            <div class="font-large" style="font-weight: 400; font-family: 'Poppins';">AaBbCc</div>
+                            <p style="font-size: 12px; opacity: 0.5; font-family: 'Poppins';">ABCDEFGHIJKLMN OPQRSTUVWXYZ</p>
+                        </div>
+                        <div class="weight-item">
+                            <small style="opacity: 0.4; letter-spacing: 1px; font-family: var(--font-body);">MEDIUM 500</small>
+                            <div class="font-large" style="font-weight: 500; font-family: 'Poppins';">AaBbCc</div>
+                            <p style="font-size: 12px; opacity: 0.5; font-family: 'Poppins';">ABCDEFGHIJKLMN OPQRSTUVWXYZ</p>
+                        </div>
+                        <div class="weight-item" style="border-color: #D4AF37;">
+                            <small style="opacity: 0.4; letter-spacing: 1px; font-family: var(--font-body);">SEMIBOLD 600</small>
+                            <div class="font-large" style="font-weight: 600; font-family: 'Poppins';">AaBbCc</div>
+                            <p style="font-size: 12px; opacity: 0.5; font-family: 'Poppins';">ABCDEFGHIJKLMN OPQRSTUVWXYZ</p>
+                        </div>
+                        <div class="weight-item">
+                            <small style="opacity: 0.4; letter-spacing: 1px; font-family: var(--font-body);">BOLD 700</small>
+                            <div class="font-large" style="font-weight: 700; font-family: 'Poppins';">AaBbCc</div>
+                            <p style="font-size: 12px; opacity: 0.5; font-family: 'Poppins';">ABCDEFGHIJKLMN OPQRSTUVWXYZ</p>
+                        </div>
+                        <div class="weight-item">
+                            <small style="opacity: 0.4; letter-spacing: 1px; font-family: var(--font-body);">EXTRABOLD 800</small>
+                            <div class="font-large" style="font-weight: 800; font-family: 'Poppins';">AaBbCc</div>
+                            <p style="font-size: 12px; opacity: 0.5; font-family: 'Poppins';">ABCDEFGHIJKLMN OPQRSTUVWXYZ</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 80px; max-width: 600px;">
+                        <p style="font-family: 'Afacad'; font-size: 17px; line-height: 1.6; opacity: 0.7;">
+                            A tipografia primária de Sérgio Salvador é baseada na fonte <strong>Poppins</strong>. Escolhida por sua geometria impecável e modernidade, ela transmite autoridade técnica com um toque humano e acolhedor, refletindo o posicionamento especializado e autoral da marca.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 16 TIPOGRAFIA SECUNDÁRIA (5.2) -->
+        <section id="sergio-typography-secondary" class="bg-offwhite">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li>Logotipo</li>
+                        <li class="active">Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; font-family: var(--font-heading);">5.2</div>
+                        <h1 style="font-size: 32px; font-family: var(--font-heading);">TIPOGRAFIA SECUNDÁRIA</h1>
+                    </div>
+                    <div style="display: flex; align-items: flex-end; gap: 40px; margin-bottom: 60px;">
+                        <h1 style="font-size: 110px; font-family: 'Afacad'; font-weight: 700; margin: 0; color: #0B1A33; line-height: 0.8;">Afacad</h1>
+                        <div style="font-size: 60px; font-family: 'Afacad'; font-weight: 300; opacity: 0.2;">Aa Bb Cc</div>
+                    </div>
+
+                    <div class="organza-grid">
+                        <div style="grid-column: span 7;">
+                            <div style="font-family: 'Afacad';">
+                                <p style="font-size: 28px; letter-spacing: 3px; margin-bottom: 20px;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                                <p style="font-size: 28px; letter-spacing: 3px; margin-bottom: 40px;">abcdefghijklmnopqrstuvwxyz</p>
+                                <p style="font-size: 28px; letter-spacing: 3px;">1234567890 !@#$%ˆ&*()</p>
+                            </div>
+                        </div>
+                        <div style="grid-column: span 5; border-left: 1px solid rgba(0,0,0,0.05); padding-left: 40px;">
+                            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px; font-family: 'Afacad';">
+                                <li style="font-weight: 400; font-size: 24px;">Regular 400</li>
+                                <li style="font-weight: 500; font-size: 24px;">Medium 500</li>
+                                <li style="font-weight: 600; font-size: 24px;">SemiBold 600</li>
+                                <li style="font-weight: 700; font-size: 24px;">Bold 700</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p style="max-width: 600px; margin-top: 60px; font-family: 'Afacad'; font-size: 17px; line-height: 1.6; opacity: 0.7;">
+                        Afacad é a tipografia de suporte, utilizada para textos corridos, informações técnicas e conteúdos secundários. Sua clareza e solidez garantem legibilidade e um ar de credibilidade científica impecável.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 17 HIERARQUIA TIPOGRÁFICA (5.3) -->
+        <section id="sergio-typography-hierarchy">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li>Logotipo</li>
+                        <li class="active">Tipografia</li>
+                        <li>Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; font-family: var(--font-heading);">5.3</div>
+                        <h1 style="font-size: 32px; font-family: var(--font-heading);">HIERARQUIA TIPOGRÁFICA</h1>
+                    </div>
+                    <p style="font-size: 14px; opacity: 0.6; margin-bottom: 40px; font-family: 'Afacad';">Padrões de uso e aplicações de texto para a marca pessoal.</p>
+
+                    <table class="hierarchy-table">
+                        <thead>
+                            <tr>
+                                <th style="font-family: 'Afacad';">STYLE</th>
+                                <th style="font-family: 'Afacad';">WHERE TO USE</th>
+                                <th style="font-family: 'Afacad';">INFO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hierarchy-row">
+                                <td class="specimen-col"><h1 style="font-size: 40px; margin: 0; white-space: nowrap; font-family: 'Poppins'; font-weight: 700;">Heading 01</h1></td>
+                                <td class="usage-col" style="font-family: 'Afacad';">Títulos principais de páginas e capas.</td>
+                                <td class="info-col" style="font-family: 'Afacad'; opacity: 0.5;">Poppins Bold • 64px</td>
+                            </tr>
+                            <tr class="hierarchy-row">
+                                <td class="specimen-col"><h2 style="font-size: 32px; margin: 0; white-space: nowrap; font-family: 'Poppins'; font-weight: 600;">Heading 02</h2></td>
+                                <td class="usage-col" style="font-family: 'Afacad';">Títulos de seção e capítulos.</td>
+                                <td class="info-col" style="font-family: 'Afacad'; opacity: 0.5;">Poppins SemiBold • 48px</td>
+                            </tr>
+                            <tr class="hierarchy-row">
+                                <td class="specimen-col"><h3 style="font-size: 24px; margin: 0; white-space: nowrap; font-family: 'Poppins'; font-weight: 500;">Heading 03</h3></td>
+                                <td class="usage-col" style="font-family: 'Afacad';">Subtítulos e identificadores.</td>
+                                <td class="info-col" style="font-family: 'Afacad'; opacity: 0.5;">Poppins Medium • 32px</td>
+                            </tr>
+                            <tr class="hierarchy-row">
+                                <td class="specimen-col"><p style="font-size: 18px; margin: 0; font-family: 'Afacad';">Body Text</p></td>
+                                <td class="usage-col" style="font-family: 'Afacad';">Textos técnicos, parágrafos e descrições.</td>
+                                <td class="info-col" style="font-family: 'Afacad'; opacity: 0.5;">Afacad Regular • 18px</td>
+                            </tr>
+                            <tr class="hierarchy-row">
+                                <td class="specimen-col"><small style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; font-family: 'Afacad'; font-weight: 700;">Label / Small</small></td>
+                                <td class="usage-col" style="font-family: 'Afacad';">Legendas, notas e especificações técnicas.</td>
+                                <td class="info-col" style="font-family: 'Afacad'; opacity: 0.5;">Afacad Bold • 12px</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 18 CORES [CAPA 06] -->
+        <section id="sergio-color-cover" class="bg-teal" style="background-color: #D4AF37;">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li>Logotipo</li>
+                        <li>Tipografia</li>
+                        <li class="active">Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                       <h4 style="font-size: 14px; letter-spacing: 2px; opacity: 0.8; font-family: 'Afacad';">CORES</h4>
+                       <div style="height: 1px; background: rgba(255,255,255,0.3); margin: 20px 0; width: 60px;"></div>
+                    </div>
+                    <div style="display: flex; align-items: baseline; gap: 40px;">
+                        <div style="font-size: 160px; font-weight: 800; line-height: 0.8; opacity: 0.1; font-family: var(--font-heading);">06</div>
+                        <h1 style="font-size: 100px; margin: 0; line-height: 1; font-family: var(--font-heading); font-weight: 200;">CORES</h1>
+                    </div>
+                    <div style="display: flex; gap: 60px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; font-family: 'Afacad';">
+                        <span>6.1 Proporção</span>
+                        <span>6.2 Especificações</span>
+                        <span>6.3 Uso das Cores</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 19 PROPORÇÃO DE CORES (6.1) -->
+        <section id="sergio-color-proportion">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li>Logotipo</li>
+                        <li>Tipografia</li>
+                        <li class="active">Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; color: #0B1A33; font-family: var(--font-heading);">6.1</div>
+                        <h1 style="font-size: 32px; font-family: var(--font-heading);">PROPORÇÃO</h1>
+                    </div>
+                    <div class="proportion-container" style="height: 400px;">
+                        <div class="proportion-block" style="background: #0B1A33; width: 45%;">
+                            <h4 style="font-family: 'Afacad'; letter-spacing: 1px;">AZUL PROFUNDO</h4>
+                            <span style="font-size: 40px; font-family: 'Poppins'; font-weight: 700;">45%</span>
+                        </div>
+                        <div class="proportion-block" style="background: #12264F; width: 30%;">
+                            <h4 style="font-family: 'Afacad'; letter-spacing: 1px;">INSTITUCIONAL</h4>
+                            <span style="font-size: 40px; font-family: 'Poppins'; font-weight: 700;">30%</span>
+                        </div>
+                        <div class="proportion-block" style="background: #F4F1E8; width: 15%; color: #0B1A33;">
+                            <h4 style="font-family: 'Afacad'; letter-spacing: 1px;">OFF-WHITE</h4>
+                            <span style="font-size: 40px; font-family: 'Poppins'; font-weight: 700;">15%</span>
+                        </div>
+                        <div class="proportion-block" style="background: #D4AF37; width: 10%;">
+                            <h4 style="font-family: 'Afacad'; letter-spacing: 1px;">DOURADO</h4>
+                            <span style="font-size: 40px; font-family: 'Poppins'; font-weight: 700;">10%</span>
+                        </div>
+                    </div>
+                    <p style="margin-top: 40px; font-family: 'Afacad'; opacity: 0.7; max-width: 600px;">
+                        O dourado deve ser utilizado com parcimônia, apenas como um detalhe de refinamento e autoridade, garantindo o "luxo discreto".
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 20 CORES TÉCNICAS (6.2) -->
+        <section id="sergio-color-specs">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li>Logotipo</li>
+                        <li>Tipografia</li>
+                        <li class="active">Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; color: #0B1A33; font-family: var(--font-heading);">6.2</div>
+                        <h1 style="font-size: 32px; font-family: var(--font-heading);">ESPECIFICAÇÕES</h1>
+                    </div>
+                    <div class="color-tech-grid">
+                        <div class="tech-color-card">
+                            <div class="main-color-swatch" style="background: #0B1A33;"></div>
+                            <div class="tech-specs" style="font-family: 'Afacad';">
+                                <div><label>HEX</label><span>#0B1A33</span></div>
+                                <div><label>NAME</label><span>Deep Blue</span></div>
+                            </div>
+                        </div>
+                        <div class="tech-color-card">
+                            <div class="main-color-swatch" style="background: #12264F;"></div>
+                            <div class="tech-specs" style="font-family: 'Afacad';">
+                                <div><label>HEX</label><span>#12264F</span></div>
+                                <div><label>NAME</label><span>Inst. Blue</span></div>
+                            </div>
+                        </div>
+                        <div class="tech-color-card">
+                            <div class="main-color-swatch" style="background: #D4AF37;"></div>
+                            <div class="tech-specs" style="font-family: 'Afacad';">
+                                <div><label>HEX</label><span>#D4AF37</span></div>
+                                <div><label>NAME</label><span>Premium Gold</span></div>
+                            </div>
+                        </div>
+                        <div class="tech-color-card">
+                            <div class="main-color-swatch" style="background: #F4F1E8; border: 1px solid rgba(0,0,0,0.05);"></div>
+                            <div class="tech-specs" style="font-family: 'Afacad';">
+                                <div><label>HEX</label><span>#F4F1E8</span></div>
+                                <div><label>NAME</label><span>Off-White</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 21 USO DAS CORES (6.3) -->
+        <section id="sergio-color-usage">
+            <div class="sidebar-layout">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>Sumário</li>
+                        <li>Introdução</li>
+                        <li>Estratégia</li>
+                        <li>Tom de Voz</li>
+                        <li>Logotipo</li>
+                        <li>Tipografia</li>
+                        <li class="active">Cores</li>
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <div style="margin-bottom: 40px;">
+                        <div style="font-size: 40px; font-weight: 700; color: #0B1A33; font-family: var(--font-heading);">6.3</div>
+                        <h1 style="font-size: 32px; font-family: var(--font-heading);">USO DAS CORES</h1>
+                    </div>
+                    <p style="font-size: 14px; opacity: 0.6; margin-bottom: 40px; font-family: 'Afacad';">As combinações devem respeitar a legibilidade e o equilíbrio visual.</p>
+
+                    <div class="usage-contrast-grid">
+                        <div class="contrast-box" style="background: #0B1A33;">
+                             <div class="contrast-circle" style="background: #D4AF37;"></div>
+                        </div>
+                        <div class="contrast-box" style="background: #D4AF37;">
+                             <div class="contrast-circle" style="background: #0B1A33;"></div>
+                        </div>
+                        <div class="contrast-box" style="background: #0B1A33;">
+                             <div class="contrast-circle" style="background: #ffffff;"></div>
+                        </div>
+                        <div class="contrast-box" style="background: #ffffff; border: 1px solid rgba(0,0,0,0.05);">
+                             <div class="contrast-circle" style="background: #0B1A33;"></div>
+                        </div>
+                        <div class="contrast-box" style="background: #0B1A33;">
+                             <div class="contrast-circle" style="background: #F4F1E8;"></div>
+                        </div>
+                        <div class="contrast-box" style="background: #F4F1E8;">
+                             <div class="contrast-circle" style="background: #0B1A33;"></div>
+                        </div>
+                        <div class="contrast-box" style="background: #D4AF37;">
+                             <div class="contrast-circle" style="background: #ffffff;"></div>
+                        </div>
+                        <div class="contrast-box" style="background: #ffffff; border: 1px solid rgba(0,0,0,0.05);">
+                             <div class="contrast-circle" style="background: #D4AF37;"></div>
+                        </div>
+                        <div class="contrast-box" style="background: #D4AF37;">
+                             <div class="contrast-circle" style="background: #F4F1E8;"></div>
+                        </div>
+                        <div class="contrast-box" style="background: #0B1A33;">
+                             <div class="contrast-circle" style="background: #12264F;"></div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 40px; border-left: 2px solid #D4AF37; padding-left: 20px; max-width: 600px;">
+                        <p style="font-size: 13px; line-height: 1.6; opacity: 0.7; font-family: 'Afacad';">
+                            As cores devem ser aplicadas respeitando contraste e harmonia. Evite combinações que prejudiquem a leitura ou descaracterizem a identidade premium do Dr. Sérgio Salvador.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 22 BRAND MESSAGE (07) -->
+        <section id="sergio-message">
+            <div class="organza-grid" style="align-items: center;">
+                <div style="grid-column: 3 / span 8; text-align: center;">
+                    <div class="chapter-number" style="color: #D4AF37; font-family: var(--font-heading);">07</div>
+                    <h1 style="font-size: 60px; line-height: 1.1; font-family: var(--font-heading); font-weight: 200;">Excelência técnica com olhar humano.</h1>
+                    <p style="font-size: 21px; opacity: 0.7; margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto; font-family: 'Afacad';">
+                        A marca Sérgio Salvador traduz o domínio da tecnologia na sensibilidade de quem cuida da vida com clareza e respeito.
+                    </p>
+                    
+                    <div style="margin-top: 80px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                        <img src="id/id 2/icone-logo.png" style="width: 40px; opacity: 0.8;">
+                        <h2 style="font-family: 'MuseoModerno'; font-size: 24px; letter-spacing: 4px; opacity: 0.5; font-weight: 200;">OBRIGADO!</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+    <script>
+        function switchBrand(brand) {
+            const switcher = document.getElementById('brand-switcher');
+            const spine = document.getElementById('spine-brandbook');
+            const sergio = document.getElementById('sergio-brandbook');
+            const btns = document.querySelectorAll('.switch-btn');
+            
+            switcher.setAttribute('data-brand', brand);
+            
+            if (brand === 'spine') {
+                spine.classList.add('active');
+                sergio.classList.remove('active');
+                btns[0].classList.add('active');
+                btns[1].classList.remove('active');
+            } else {
+                sergio.classList.add('active');
+                spine.classList.remove('active');
+                btns[0].classList.remove('active');
+                btns[1].classList.add('active');
+            }
+            window.scrollTo(0, 0);
+        }
+
+        // Initialize observers for both brandbooks
+        function initObservers() {
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.5 });
+            sections.forEach(section => observer.observe(section));
+        }
+        initObservers();
+    </script>
 </body>
 </html>

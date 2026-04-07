@@ -32,6 +32,41 @@
     --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* --- Sergio Salvador Theme Overrides --- */
+#sergio-brandbook {
+    --color-navy: #0B1A33;
+    --color-teal: #D4AF37; /* Premium Gold */
+    --color-teal-light: #F4F1E8; /* Off-white sophisticated */
+    --color-blue-soft: #12264F; /* Institutional Blue */
+    --color-white: #F4F1E8; /* Off-white as white base */
+    --color-gray-light: #F4F1E8;
+    
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Afacad', sans-serif;
+}
+
+#sergio-brandbook h1, 
+#sergio-brandbook h2, 
+#sergio-brandbook h3, 
+#sergio-brandbook .chapter-number,
+#sergio-brandbook .number-big,
+#sergio-brandbook .title-bottom {
+    font-family: var(--font-heading);
+    font-weight: 200; /* ExtraLight as per instruction for big headings */
+}
+
+#sergio-brandbook .chapter-number {
+    font-weight: 400;
+}
+
+#sergio-brandbook .side-nav a {
+    background: rgba(18, 38, 79, 0.2);
+}
+
+#sergio-brandbook .bg-navy ~ .side-nav a { 
+    background: rgba(212, 175, 55, 0.3); 
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -514,4 +549,219 @@ h3 { font-family: var(--font-heading); font-size: var(--h3-size); font-weight: 5
     width: 60px;
     height: 60px;
     border-radius: 50%;
+}
+
+/* --- Brand Switcher UI --- */
+.brand-switcher {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    background: rgba(10, 31, 61, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    padding: 6px;
+    display: flex;
+    gap: 0;
+    z-index: 2000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s var(--transition-smooth);
+    width: 380px; /* Fixed width for better centering control */
+}
+
+.brand-switcher::before {
+    content: '';
+    position: absolute;
+    width: calc(50% - 6px);
+    height: calc(100% - 12px);
+    background: var(--color-teal); /* Project Green for Spine */
+    border-radius: 100px;
+    left: 6px;
+    top: 6px;
+    z-index: 0;
+    transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.brand-switcher[data-brand="sergio"]::before {
+    transform: translateX(100%);
+    background: #C2A566; /* Specific color for Sergio */
+}
+
+.switch-btn {
+    position: relative;
+    z-index: 1;
+    border: none;
+    background: none;
+    padding: 12px 0;
+    flex: 1; /* Equal width buttons for perfect centering */
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: white !important; /* Always white for visibility */
+    opacity: 0.3; /* Lower opacity when inactive */
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.switch-btn.active {
+    opacity: 1; /* Full opacity when active */
+}
+
+/* Remove the navy color overrides that were making text invisible */
+.brand-switcher[data-brand="spine"] .switch-btn:last-child,
+.brand-switcher[data-brand="sergio"] .switch-btn:first-child {
+    color: white !important;
+}
+
+.brand-switcher[data-brand="sergio"] .switch-btn:last-child {
+    color: white;
+    opacity: 1;
+}
+
+.brand-switcher:hover {
+    transform: translateY(-2px);
+    background: rgba(10, 31, 61, 0.15);
+}
+
+/* --- Content Visibility --- */
+.brandbook-wrapper {
+    display: none;
+    animation: fadeIn 0.8s var(--transition-smooth);
+}
+
+.brandbook-wrapper.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Download PDF Button (Moved or Hidden) --- */
+.download-pdf-btn {
+    display: none; /* User asked to replace it */
+}
+
+.download-pdf-btn:hover {
+    background: var(--color-teal);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(46, 196, 182, 0.3);
+}
+
+.download-pdf-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.download-pdf-btn:hover svg {
+    transform: translateY(2px);
+}
+
+/* --- Professional Widescreen Export Style --- */
+@page {
+    margin: 0;
+    size: 1440px 900px landscape;
+}
+
+@media print {
+    /* Hide global navigation but keep editorial UI */
+    .download-pdf-btn, .side-nav, .nav-links {
+        display: none !important;
+    }
+
+    html, body {
+        height: 100%;
+        width: 1440px;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white;
+        overflow: visible;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .brandbook {
+        max-width: 1440px !important;
+        width: 1440px !important;
+        margin: 0 !important;
+        border: none;
+    }
+
+    section {
+        height: 900px !important;
+        width: 1440px !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        position: relative;
+        overflow: hidden !important;
+        padding: 60px !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        scroll-snap-align: none;
+        border: none !important;
+    }
+
+    /* Re-enable exact web layout for the sidebar */
+    .sidebar-layout {
+        display: grid !important;
+        grid-template-columns: 300px 1fr !important;
+        height: 100% !important;
+        width: 100% !important;
+        gap: 0 !important;
+    }
+
+    .sidebar {
+        display: block !important;
+        border-right: 1px solid rgba(0,0,0,0.1) !important;
+        padding-right: 40px !important;
+    }
+
+    .bg-navy .sidebar { border-right-color: rgba(255,255,255,0.1) !important; }
+
+    .main-content {
+        width: 100% !important;
+        padding-left: 40px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        flex: 1 !important;
+        overflow: visible !important;
+    }
+
+    .organza-grid {
+        display: grid !important;
+        grid-template-columns: repeat(12, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    /* Preserve colors on dark sections */
+    .bg-navy { 
+        background-color: var(--color-navy) !important; 
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .bg-teal { 
+        background-color: var(--color-teal) !important; 
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .chapter-number {
+        color: var(--color-teal) !important;
+    }
+
+    img {
+        max-height: 80vh;
+        object-fit: contain;
+    }
 }
