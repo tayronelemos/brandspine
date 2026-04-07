@@ -1,0 +1,12 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# Temp Files
+*.tmp
+*.bak
+*.log
+
+# Deployment
+.vercel
+.git

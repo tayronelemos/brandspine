@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandbook — Spine Unit by Sérgio Salvador</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Organza Layouts */
+        .intro-img-container {
+            grid-column: span 6;
+            height: 100%;
+            background: url('id/introducao.png') center/cover no-repeat;
+        }
+
+        .typo-specimen {
+            font-size: 180px;
+            line-height: 0.8;
+            letter-spacing: -5px;
+            font-weight: 700;
+        }
+
+        .color-grid-organza {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: rgba(0,0,0,0.05);
+        }
+
+        .side-nav {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+        }
+        .side-nav a {
+            width: 6px;
+            height: 6px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 50%;
+        }
+        .bg-navy ~ .side-nav a { background: rgba(255,255,255,0.2); }
+    </style>
+</head>
+<body>
+
+<div class="brandbook">
+    <!-- Rest of the sections... (I'll keep the current sections) -->
+
+    <!-- 01 CAPA -->
+    <section class="bg-navy active" id="capa" style="justify-content: space-between; overflow: hidden;">
+        <div class="header">
+            <span style="letter-spacing: 2px; font-size: 12px; font-weight: 500;">BRANDBOOK GUIDELINES v.26</span>
+        </div>
+        
+        <div class="organza-grid" style="align-items: center;">
+            <div style="grid-column: span 12;">
+                <img src="id/logo-modo-escuro.png" alt="Logo" style="width: 280px; margin-bottom: 2rem;">
+                <h1 style="font-size: 100px; margin: 0;">BRANDBOOK<br>GUIDELINES</h1>
+                <p style="font-size: 24px; font-weight: 300; opacity: 0.7; margin-top: 20px;">Spine Unit by Sérgio Salvador</p>
+            </div>
+        </div>
+
+        <div class="footer" style="display: flex; justify-content: space-between; font-size: 12px; opacity: 0.5;">
+            <div>© 2026 SPINE UNIT</div>
+            <div>SÉRGIO SALVADOR</div>
+        </div>
+    </section>
+
+    <!-- 02 SUMÁRIO -->
+    <section id="sumario">
+        <div class="organza-grid">
+            <div style="grid-column: span 4;" class="v-line">
+                <h3 style="padding-left: 20px;">01 SUMÁRIO</h3>
+            </div>
+            <div style="grid-column: span 8; padding-left: 40px;">
+                <nav style="display: flex; flex-direction: column; gap: 10px; font-family: var(--font-heading); font-weight: 600; font-size: 20px;">
+                    <a href="#intro" style="color: inherit; text-decoration: none;">01 Introdução</a>
+                    <a href="#estratégia" style="color: inherit; text-decoration: none;">02 Estratégia</a>
+                    <a href="#tom-de-voz" style="color: inherit; text-decoration: none;">03 Tom de Voz</a>
+                    <a href="#logo-cover" style="color: inherit; text-decoration: none;">04 Logotipo</a>
+                    <a href="#typography" style="color: inherit; text-decoration: none;">05 Tipografia</a>
+                    <a href="#color-cover" style="color: inherit; text-decoration: none;">06 Cores</a>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 INTRODUCTION -->
+    <section id="intro" style="padding: 0;">
+        <div class="organza-grid">
+            <div style="grid-column: span 6; padding: 80px; display: flex; flex-direction: column; justify-content: center;">
+                <div class="chapter-number">01</div>
+                <h2>INTRODUÇÃO</h2>
+                <p class="fade-in" style="font-size: 20px; line-height: 1.6; max-width: 450px; margin-top: 20px;">
+                    Spine Unit é uma marca especializada em neurocirurgia que combina tecnologia avançada com um cuidado humano profundo.
+                    <br><br>
+                    Nosso objetivo é oferecer segurança, precisão e clareza em cada etapa do tratamento, proporcionando ao paciente confiança e tranquilidade.
+                    <br><br>
+                    Acreditamos que excelência técnica deve caminhar junto com empatia.
+                </p>
+            </div>
+            <div class="intro-img-container" style="grid-column: span 6;"></div>
+        </div>
+    </section>
+
+    <!-- 04 STRATEGY (CAPA 02) -->
+    <section id="estratégia" class="bg-navy">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li class="active">Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li>Logotipo</li>
+                    <li>Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content strategy-cover">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <h3 style="font-size: 14px; letter-spacing: 2px;">ESTRATÉGIA</h3>
+                    <div style="text-align: right; font-size: 11px; opacity: 0.6;">
+                        2.1 Missão e Visão<br>
+                        2.2 Visão Geral da Marca
+                    </div>
+                </div>
+                
+                <div class="h-line"></div>
+
+                <div class="number-big">02</div>
+                
+                <div class="title-bottom">ESTRATÉGIA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 MISSÃO E VISÃO (2.1) -->
+    <section id="missao-visao">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li class="active">Missão e Visão</li>
+                    <li>Tom de Voz</li>
+                    <li>Logotipo</li>
+                    <li>Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px;">
+                    <div style="font-size: 40px; font-weight: 700;">2.1</div>
+                    <h1 style="font-size: 32px;">MISSÃO E VISÃO</h1>
+                </div>
+
+                <div class="content-cols">
+                    <div>
+                        <h4>Missão</h4>
+                        <p>
+                            Oferecer soluções em neurocirurgia com excelência técnica, precisão e responsabilidade, garantindo segurança em todas as etapas do tratamento.
+                            <br><br>
+                            Nossa missão é transformar conhecimento científico em decisões assertivas, proporcionando ao paciente clareza, confiança e qualidade de vida.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Visão</h4>
+                        <p>
+                            Ser reconhecido como referência em neurocirurgia moderna, destacando-se pela combinação entre tecnologia, precisão e cuidado humano.
+                            <br><br>
+                            Buscamos estabelecer um novo padrão de atendimento, onde técnica avançada e empatia caminham juntas para oferecer resultados superiores e experiências mais seguras.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 VISÃO GERAL DA MARCA (2.2) -->
+    <section id="visao-geral">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li class="active">Visão Geral da Marca</li>
+                    <li>Tom de Voz</li>
+                    <li>Logotipo</li>
+                    <li>Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px;">
+                    <div style="font-size: 40px; font-weight: 700;">2.2</div>
+                    <h1 style="font-size: 32px;">VISÃO GERAL DA MARCA</h1>
+                </div>
+
+                <div class="content-cols">
+                    <div>
+                        <h4>O que fazemos<br>& Como geramos impacto</h4>
+                        <p>
+                            A Spine Unit é uma marca especializada em neurocirurgia que atua com foco em precisão, segurança e excelência técnica. Nosso trabalho vai além do procedimento cirúrgico — buscamos oferecer uma jornada completa de cuidado, desde o diagnóstico até a recuperação do paciente.
+                            <br><br>
+                            Unimos tecnologia avançada, conhecimento científico e uma abordagem humanizada para proporcionar decisões mais seguras e tratamentos mais eficazes. Cada caso é conduzido com rigor técnico e atenção individualizada.
+                            <br><br>
+                            Nosso compromisso é garantir que o paciente compreenda cada etapa do processo, trazendo clareza, confiança e tranquilidade em momentos decisivos.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Quem somos<br>& Por que existimos</h4>
+                        <p>
+                            A Spine Unit representa a união entre ciência, experiência e responsabilidade. Somos especialistas dedicados a restaurar qualidade de vida por meio de intervenções seguras e bem planejadas.
+                            <br><br>
+                            Acreditamos que a neurocirurgia exige mais do que técnica — exige empatia, escuta ativa e respeito pela individualidade de cada paciente.
+                            <br><br>
+                            Existimos para transformar complexidade em clareza, medo em confiança e diagnóstico em solução. Nosso papel é conduzindo cada pessoa com segurança em uma das decisões mais importantes da sua vida.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 07 TOM DE VOZ (CAPA 03) -->
+    <section id="tom-de-voz" class="bg-teal">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li class="active">Tom de Voz</li>
+                    <li>Logotipo</li>
+                    <li>Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content strategy-cover">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <h3 style="font-size: 14px; letter-spacing: 2px;">TOM DE VOZ</h3>
+                    <div style="text-align: right; font-size: 11px; opacity: 0.6;">
+                        3.1 Características do Tom
+                    </div>
+                </div>
+                
+                <div class="h-line"></div>
+
+                <div class="number-big">03</div>
+                
+                <div class="title-bottom" style="font-size: 100px;">TOM DE VOZ</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 08 CARACTERÍSTICAS DO TOM (3.1) -->
+    <section id="tom-caracteristicas">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li class="active">Tom de Voz</li>
+                    <li>Logotipo</li>
+                    <li>Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px;">
+                    <div style="font-size: 40px; font-weight: 700;">3.1</div>
+                    <h1 style="font-size: 32px;">CARACTERÍSTICAS</h1>
+                </div>
+
+                <div class="content-cols">
+                    <div>
+                        <h4>Como nos comunicamos</h4>
+                        <p>
+                            A comunicação da Spine Unit é baseada em clareza, responsabilidade e empatia. Utilizamos uma linguagem direta, acessível e objetiva, evitando termos excessivamente técnicos quando não são necessários.
+                            <br><br>
+                            Nosso objetivo é garantir que o paciente compreenda cada etapa do processo, reduzindo inseguranças e fortalecendo a confiança na tomada de decisão.
+                            <br><br>
+                            Mantemos um tom profissional, porém humano, equilibrando autoridade médica com acolhimento.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Como nos posicionamos</h4>
+                        <p>
+                            A Spine Unit se posiciona como uma referência em precisão e segurança, transmitindo domínio técnico sem gerar distanciamento.
+                            <br><br>
+                            Nossa voz é firme, segura e transparente. Evitamos exageros, promessas irreais ou qualquer tipo de comunicação alarmista.
+                            <br><br>
+                            Cada mensagem deve transmitir confiança, controle e responsabilidade, reforçando a ideia de que o paciente está em boas mãos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 09 LOGOTIPO (4.1) -->
+    <section id="nosso-logo">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li class="active">Logotipo</li>
+                    <li>Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px;">
+                    <div style="font-size: 40px; font-weight: 700;">4.1</div>
+                    <h1 style="font-size: 32px;">NOSSO LOGO</h1>
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; padding: 40px;">
+                    <img src="id/logo-primaria.png" style="width: 500px; margin-bottom: 40px;">
+                    <div style="max-width: 600px; text-align: center;">
+                        <p style="font-size: 14px; line-height: 1.6; opacity: 0.6; font-family: var(--font-body);">
+                            O logotipo da Spine Unit representa precisão, estrutura e fluidez, inspirado na anatomia da coluna vertebral. Sua forma transmite movimento e estabilidade, refletindo a essência da marca.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10 VERSÕES DO LOGO (4.2) -->
+    <section id="logo-versoes">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li class="active">Logotipo</li>
+                    <li>Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px;">
+                    <div style="font-size: 40px; font-weight: 700;">4.2</div>
+                    <h1 style="font-size: 32px;">VERSÕES DO LOGO</h1>
+                </div>
+
+                <div class="logo-grid-v3" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(0,0,0,0.05);">
+                    <div style="grid-row: span 2; background: #fff; padding: 80px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; border-right: 1px solid rgba(0,0,0,0.05);">
+                        <small style="letter-spacing: 2px; opacity: 0.4; font-weight: 700;">PRIMARY LOGO</small>
+                        <img src="id/logo-primaria.png" style="width: 250px; margin-top: 40px;">
+                    </div>
+                    <div style="background: #fff; padding: 60px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                        <small style="letter-spacing: 2px; opacity: 0.4; font-weight: 700;">BRANDMARK</small>
+                        <img src="id/brandmark.png" style="width: 60px; margin-top: 20px;">
+                    </div>
+                    <div style="background: #fff; padding: 60px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center;">
+                        <small style="letter-spacing: 2px; opacity: 0.4; font-weight: 700;">LOGOTYPE</small>
+                        <img src="id/logotype.png" style="width: 180px; margin-top: 20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11 CONSTRUÇÃO DO LOGO (4.3) -->
+    <section id="logo-construcao" class="bg-navy">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li class="active">Logotipo</li>
+                    <li>Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px; display: flex; justify-content: space-between; align-items: flex-end;">
+                    <div>
+                        <div style="font-size: 40px; font-weight: 700; color: var(--color-teal);">4.3</div>
+                        <h1 style="font-size: 32px; color: #fff;">CONSTRUÇÃO DO LOGO</h1>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1;">
+                   <div style="width: 100%; max-width: 800px;">
+                        <img src="id/construção logo.png" style="width: 100%; border-radius: 8px;">
+                   </div>
+                   <div style="max-width: 600px; margin-top: 40px; text-align: center;">
+                        <p style="font-size: 14px; line-height: 1.6; opacity: 0.7;">
+                            O logotipo da Spine Unit foi desenvolvido a partir de uma construção geométrica precisa, garantindo equilíbrio visual, proporção e consistência em todas as aplicações.
+                            Sua estrutura modular reforça os conceitos de estabilidade, alinhamento e precisão — valores diretamente ligados à atuação da marca.
+                        </p>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12 ÁREA DE PROTEÇÃO E TAMANHO MÍNIMO (4.4) -->
+    <section id="logo-protecao" class="bg-offwhite">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li class="active">Logotipo</li>
+                    <li>Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px;">
+                    <div style="font-size: 40px; font-weight: 700; color: var(--color-navy);">4.4</div>
+                    <h1 style="font-size: 32px;">ÁREA DE PROTEÇÃO E TAMANHO MÍNIMO</h1>
+                </div>
+
+                <div class="organza-grid" style="gap: 60px;">
+                    <div style="grid-column: span 7; background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 100px; position: relative;">
+                        <!-- Clearspace visualization -->
+                        <div class="protection-box">
+                             <img src="id/logo-primaria.png" style="width: 280px; display: block;">
+                             <!-- Mock markings -->
+                             <div style="position: absolute; top: -15px; left: 50%; color: var(--color-teal); font-size: 10px; font-weight: 700;">UNIT X</div>
+                             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px dashed rgba(46, 196, 182, 0.3); pointer-events: none;"></div>
+                        </div>
+                        <p style="position: absolute; bottom: 30px; font-size: 11px; opacity: 0.5;">MARGEM DE SEGURANÇA = 2X</p>
+                    </div>
+                    
+                    <div style="grid-column: span 5; display: flex; flex-direction: column; gap: 40px;">
+                        <div>
+                            <h4 style="font-size: 14px; letter-spacing: 1px; margin-bottom: 20px; opacity: 0.5;">TAMANHO MÍNIMO IMPRESSÃO</h4>
+                            <div style="display: flex; align-items: center; gap: 20px;">
+                                <img src="id/logo-primaria.png" style="width: 80px;">
+                                <span style="font-size: 18px; font-weight: 600;">25 mm</span>
+                            </div>
+                        </div>
+                        <div style="height: 1px; background: rgba(0,0,0,0.1);"></div>
+                        <div>
+                            <h4 style="font-size: 14px; letter-spacing: 1px; margin-bottom: 20px; opacity: 0.5;">TAMANHO MÍNIMO DIGITAL</h4>
+                            <div style="display: flex; align-items: center; gap: 20px;">
+                                <img src="id/logo-primaria.png" style="width: 50px;">
+                                <span style="font-size: 18px; font-weight: 600;">100 px</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 13px; opacity: 0.7; margin-top: 20px;">
+                            Para garantir legibilidade e integridade visual, o logotipo deve sempre respeitar a área mínima de proteção e os tamanhos definidos para cada contexto de uso.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13 USO DO LOGO (4.5) -->
+    <section id="logo-uso">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li class="active">Logotipo</li>
+                    <li>Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px;">
+                    <div style="font-size: 40px; font-weight: 700;">4.5</div>
+                    <h1 style="font-size: 32px;">USO DO LOGO</h1>
+                </div>
+
+                <div class="usage-grid-v2">
+                    <div class="usage-item" style="background: #fff;">
+                        <small>FUNDO CLARO (PRINCIPAL)</small>
+                        <img src="id/logo-primaria.png" style="width: 180px;">
+                    </div>
+                    <div class="usage-item" style="background: var(--color-teal);">
+                        <small>FUNDO VERDE INSTITUCIONAL</small>
+                        <img src="id/logo-modo-escuro.png" style="width: 180px; filter: brightness(0) invert(1);">
+                    </div>
+                    <div class="usage-item" style="background: var(--color-navy);">
+                        <small>FUNDO MARINHO (PRIMÁRIO)</small>
+                        <img src="id/logo-modo-escuro.png" style="width: 180px;">
+                    </div>
+                    <div class="usage-item" style="background: #F5F5F0;">
+                        <small>FUNDO NEUTRO BEGE</small>
+                        <img src="id/logo-primaria.png" style="width: 180px;">
+                    </div>
+                    <div class="usage-item" style="background: #000;">
+                        <small>FUNDO PRETO</small>
+                        <img src="id/logo-modo-escuro.png" style="width: 180px;">
+                    </div>
+                    <div class="usage-item" style="background: var(--color-teal-light);">
+                        <small>FUNDO VIBRANTE / APOIO</small>
+                        <img src="id/logo-primaria.png" style="width: 180px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14 TIPOGRAFIA [CAPA 05] -->
+    <section id="typography-cover" class="bg-teal">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li>Logotipo</li>
+                    <li class="active">Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                   <h4 style="font-size: 14px; letter-spacing: 2px; opacity: 0.8;">TIPOGRAFIA</h4>
+                   <div style="height: 1px; background: rgba(255,255,255,0.2); margin: 20px 0; width: 60px;"></div>
+                </div>
+
+                <div style="display: flex; align-items: baseline; gap: 40px;">
+                    <div style="font-size: 160px; font-weight: 800; line-height: 0.8; opacity: 0.2;">05</div>
+                    <h1 style="font-size: 100px; margin: 0; line-height: 1;">TIPOGRAFIA</h1>
+                </div>
+
+                <div style="display: flex; gap: 60px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7;">
+                    <span>5.1 Tipografia Primária</span>
+                    <span>5.2 Tipografia Secundária</span>
+                    <span>5.3 Hierarquia Tipográfica</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 15 TIPOGRAFIA PRIMÁRIA (5.1) -->
+    <section id="typography-primary">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li>Logotipo</li>
+                    <li class="active">Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px;">
+                    <div style="font-size: 40px; font-weight: 700;">5.1</div>
+                    <h1 style="font-size: 32px;">TIPOGRAFIA PRIMÁRIA</h1>
+                </div>
+                
+                <div class="typeface-grid">
+                    <div class="weight-item">
+                        <h4>LIGHT 300</h4>
+                        <div class="font-large" style="font-weight: 300;">AaBbCc</div>
+                        <p style="font-size: 11px; opacity: 0.5;">ABCDEFGHIJKLMN OPQRSTUVWXYZ</p>
+                    </div>
+                    <div class="weight-item">
+                        <h4>REGULAR 400</h4>
+                        <div class="font-large" style="font-weight: 400;">AaBbCc</div>
+                        <p style="font-size: 11px; opacity: 0.5;">ABCDEFGHIJKLMN OPQRSTUVWXYZ</p>
+                    </div>
+                    <div class="weight-item">
+                        <h4>MEDIUM 500</h4>
+                        <div class="font-large" style="font-weight: 500;">AaBbCc</div>
+                        <p style="font-size: 11px; opacity: 0.5;">ABCDEFGHIJKLMN OPQRSTUVWXYZ</p>
+                    </div>
+                    <div class="weight-item">
+                        <h4>SEMIBOLD 600</h4>
+                        <div class="font-large" style="font-weight: 600;">AaBbCc</div>
+                        <p style="font-size: 11px; opacity: 0.5;">ABCDEFGHIJKLMN OPQRSTUVWXYZ</p>
+                    </div>
+                    <div class="weight-item">
+                        <h4>BOLD 700</h4>
+                        <div class="font-large" style="font-weight: 700;">AaBbCc</div>
+                        <p style="font-size: 11px; opacity: 0.5;">ABCDEFGHIJKLMN OPQRSTUVWXYZ</p>
+                    </div>
+                    <div class="weight-item">
+                        <h4>EXTRABOLD 800</h4>
+                        <div class="font-large" style="font-weight: 800;">AaBbCc</div>
+                        <p style="font-size: 11px; opacity: 0.5;">ABCDEFGHIJKLMN OPQRSTUVWXYZ</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 80px; max-width: 600px;">
+                    <p style="font-size: 14px; line-height: 1.6; opacity: 0.7;">
+                        A tipografia primária da Spine Unit foi escolhida por sua clareza, modernidade e excelente legibilidade em diferentes contextos. Seu desenho geométrico e contemporâneo reforça a precisão e o posicionamento profissional da marca.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 16 TIPOGRAFIA SECUNDÁRIA (5.2) -->
+    <section id="typography-secondary">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li>Logotipo</li>
+                    <li class="active">Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px;">
+                    <div style="font-size: 40px; font-weight: 700;">5.2</div>
+                    <h1 style="font-size: 32px;">TIPOGRAFIA SECUNDÁRIA</h1>
+                </div>
+                <div style="display: flex; align-items: flex-end; gap: 40px; margin-bottom: 60px;">
+                    <h1 style="font-size: 120px; margin: 0; line-height: 0.8; font-family: 'Inter', sans-serif; font-weight: 700;">Inter</h1>
+                    <div style="font-size: 60px; font-weight: 300; opacity: 0.1;">Aa Bb</div>
+                </div>
+
+                <div class="organza-grid">
+                    <div style="grid-column: span 7;">
+                        <div style="font-family: 'Inter';">
+                            <p style="font-size: 32px; letter-spacing: 5px; margin-bottom: 20px;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                            <p style="font-size: 32px; letter-spacing: 5px; margin-bottom: 40px;">abcdefghijklmnopqrstuvwxyz</p>
+                            <p style="font-size: 32px; letter-spacing: 5px;">1234567890 !@#$%ˆ&*()</p>
+                        </div>
+                    </div>
+                    <div style="grid-column: span 5; border-left: 1px solid rgba(0,0,0,0.05); padding-left: 40px;">
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px;">
+                            <li style="font-family: 'Inter'; font-weight: 300; font-size: 24px;">Light</li>
+                            <li style="font-family: 'Inter'; font-weight: 400; font-size: 24px;">Regular</li>
+                            <li style="font-family: 'Inter'; font-weight: 500; font-size: 24px;">Medium</li>
+                            <li style="font-family: 'Inter'; font-weight: 600; font-size: 24px;">SemiBold</li>
+                            <li style="font-family: 'Inter'; font-weight: 700; font-size: 24px;">Bold</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p style="max-width: 600px; margin-top: 60px; font-size: 14px; line-height: 1.6; opacity: 0.7;">
+                    A tipografia secundária é utilizada para textos corridos e conteúdos informativos. Inter foi escolhida por sua alta legibilidade em interfaces digitais, garantindo conforto na leitura e consistência em aplicações.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 17 HIERARQUIA TIPOGRÁFICA (5.3) -->
+    <section id="typography-hierarchy">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li>Logotipo</li>
+                    <li class="active">Tipografia</li>
+                    <li>Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px;">
+                    <div style="font-size: 40px; font-weight: 700;">5.3</div>
+                    <h1 style="font-size: 32px;">HIERARQUIA TIPOGRÁFICA</h1>
+                </div>
+                <p style="font-size: 14px; opacity: 0.6; margin-bottom: 40px;">Padrões de uso e aplicações de texto.</p>
+
+                <table class="hierarchy-table">
+                    <thead>
+                        <tr>
+                            <th>STYLE</th>
+                            <th>WHERE TO USE</th>
+                            <th>INFO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hierarchy-row">
+                            <td class="specimen-col"><h1 style="font-size: 40px; margin: 0; white-space: nowrap;">Heading 01</h1></td>
+                            <td class="usage-col">Títulos principais de páginas e capas.</td>
+                            <td class="info-col">Poppins Bold • 64px</td>
+                        </tr>
+                        <tr class="hierarchy-row">
+                            <td class="specimen-col"><h2 style="font-size: 32px; margin: 0; white-space: nowrap;">Heading 02</h2></td>
+                            <td class="usage-col">Títulos de seção e destaque.</td>
+                            <td class="info-col">Poppins SemiBold • 48px</td>
+                        </tr>
+                        <tr class="hierarchy-row">
+                            <td class="specimen-col"><h3 style="font-size: 24px; margin: 0; white-space: nowrap;">Heading 03</h3></td>
+                            <td class="usage-col">Subtítulos e labels secundários.</td>
+                            <td class="info-col">Poppins Medium • 32px</td>
+                        </tr>
+                        <tr class="hierarchy-row">
+                            <td class="specimen-col"><h4 style="font-size: 18px; margin: 0; font-weight: 400; white-space: nowrap;">Heading 04</h4></td>
+                            <td class="usage-col">Sub-seções e agrupadores.</td>
+                            <td class="info-col">Poppins Regular • 24px</td>
+                        </tr>
+                        <tr class="hierarchy-row">
+                            <td class="specimen-col"><p style="font-size: 18px; font-weight: 500; margin: 0; color: var(--color-teal); font-family: 'Inter';">Heading 05</p></td>
+                            <td class="usage-col">Destaques dentro de textos e boxes.</td>
+                            <td class="info-col">Inter Medium • 18px</td>
+                        </tr>
+                        <tr class="hierarchy-row">
+                            <td class="specimen-col"><p style="font-size: 16px; margin: 0; font-family: 'Inter'; opacity: 0.8;">Body Text Content</p></td>
+                            <td class="usage-col">Texto corrido e parágrafos padrão.</td>
+                            <td class="info-col">Inter Regular • 16px</td>
+                        </tr>
+                        <tr class="hierarchy-row" style="border-bottom: none;">
+                            <td class="specimen-col"><small style="font-size: 14px; font-family: 'Inter'; font-weight: 300; opacity: 0.6;">Caption description</small></td>
+                            <td class="usage-col">Legendas, notas e metadados.</td>
+                            <td class="info-col">Inter Light • 14px</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p style="max-width: 600px; margin-top: 40px; font-size: 13px; line-height: 1.6; opacity: 0.5;">
+                    A hierarquia tipográfica garante consistência visual e organização da informação em todos os pontos de contato da marca.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 18 CORES [CAPA 06] -->
+    <section id="color-cover" class="bg-teal">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li>Logotipo</li>
+                    <li>Tipografia</li>
+                    <li class="active">Cores</li>
+                </ul>
+            </div>
+            <div class="main-content" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                   <h4 style="font-size: 14px; letter-spacing: 2px; opacity: 0.8;">CORES</h4>
+                   <div style="height: 1px; background: rgba(255,255,255,0.2); margin: 20px 0; width: 60px;"></div>
+                </div>
+
+                <div style="display: flex; align-items: baseline; gap: 40px;">
+                    <div style="font-size: 160px; font-weight: 800; line-height: 0.8; opacity: 0.2;">06</div>
+                    <h1 style="font-size: 100px; margin: 0; line-height: 1;">CORES</h1>
+                </div>
+
+                <div style="display: flex; gap: 60px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7;">
+                    <span>6.1 Proporção</span>
+                    <span>6.2 Cores Primárias</span>
+                    <span>6.3 Uso das Cores</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 19 PROPORÇÃO DE CORES (6.1) -->
+    <section id="color-proportion">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li>Logotipo</li>
+                    <li>Tipografia</li>
+                    <li class="active">Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px;">
+                    <div style="font-size: 40px; font-weight: 700; color: var(--color-navy);">6.1</div>
+                    <h1 style="font-size: 32px;">PROPORÇÃO</h1>
+                </div>
+                <p style="font-size: 14px; opacity: 0.6; max-width: 600px; line-height: 1.6;">
+                    A proporção de cores garante equilíbrio visual e consistência na aplicação da identidade da marca em diferentes contextos e materiais.
+                </p>
+
+                <div class="proportion-container">
+                    <div class="proportion-block" style="background: var(--color-teal); width: 40%;">
+                        <h4>VERDE PRINCIPAL</h4>
+                        <span>40%</span>
+                    </div>
+                    <div class="proportion-block" style="background: var(--color-navy); width: 35%;">
+                        <h4>MARINHO PROFUNDO</h4>
+                        <span>35%</span>
+                    </div>
+                    <div class="proportion-block" style="background: var(--color-gray-light); width: 15%; color: var(--color-navy);">
+                        <h4>BEGE</h4>
+                        <span>15%</span>
+                    </div>
+                    <div class="proportion-block" style="background: var(--color-teal-light); width: 10%; color: var(--color-navy);">
+                        <h4>DESTAQUE</h4>
+                        <span>10%</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 60px; max-width: 700px;">
+                    <p style="font-size: 14px; line-height: 1.6; opacity: 0.7;">
+                        O uso correto dessas proporções fortalece a presença visual e mantém a harmonia em todos os pontos de contato da Spine Unit, desde o ambiente digital até materiais físicos e sinalização hospitalar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 20 CORES PRIMÁRIAS (6.2) -->
+    <section id="color-primary">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li>Logotipo</li>
+                    <li>Tipografia</li>
+                    <li class="active">Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px;">
+                    <div style="font-size: 40px; font-weight: 700; color: var(--color-navy);">6.2</div>
+                    <h1 style="font-size: 32px;">ESPECIFICAÇÕES</h1>
+                </div>
+                
+                <div class="color-tech-grid">
+                    <!-- VERDE CIRÚRGICO -->
+                    <div class="tech-color-card">
+                        <div class="main-color-swatch" style="background: #2EC4B6;"></div>
+                        <div class="tech-specs">
+                            <div><label>NAME</label><span>Verde Cirúrgico</span></div>
+                            <div><label>HEX</label><span class="hex-value">#2EC4B6</span></div>
+                            <div><label>RGB</label><span>46 / 196 / 182</span></div>
+                            <div><label>CMYK</label><span>77 / 0 / 7 / 23</span></div>
+                        </div>
+                        <div class="tonal-strip">
+                            <div class="tonal-step" style="background: #58D0C5;">80%</div>
+                            <div class="tonal-step" style="background: #82DCD3;">60%</div>
+                            <div class="tonal-step" style="background: #ADE7E2;">40%</div>
+                            <div class="tonal-step" style="background: #D6F3F0;">20%</div>
+                        </div>
+                    </div>
+
+                    <!-- MARINHO PROFUNDO -->
+                    <div class="tech-color-card">
+                        <div class="main-color-swatch" style="background: #0A1F3D;"></div>
+                        <div class="tech-specs" style="margin-top: 30px;">
+                            <div><label>NAME</label><span>Marinho Profundo</span></div>
+                            <div><label>HEX</label><span class="hex-value">#0A1F3D</span></div>
+                            <div><label>RGB</label><span>10 / 31 / 61</span></div>
+                            <div><label>CMYK</label><span>84 / 49 / 0 / 76</span></div>
+                        </div>
+                        <div class="tonal-strip">
+                            <div class="tonal-step" style="background: #3B4C64; color: white;">80%</div>
+                            <div class="tonal-step" style="background: #6C798B; color: white;">60%</div>
+                            <div class="tonal-step" style="background: #9DA5B1;">40%</div>
+                            <div class="tonal-step" style="background: #CED2D8;">20%</div>
+                        </div>
+                    </div>
+
+                    <!-- AQUA -->
+                    <div class="tech-color-card">
+                        <div class="main-color-swatch" style="background: #DAF0F2;"></div>
+                        <div class="tech-specs">
+                            <div><label>NAME</label><span>Aqua Destaque</span></div>
+                            <div><label>HEX</label><span class="hex-value">#DAF0F2</span></div>
+                            <div><label>RGB</label><span>218 / 240 / 242</span></div>
+                            <div><label>CMYK</label><span>10 / 1 / 0 / 5</span></div>
+                        </div>
+                        <div class="tonal-strip">
+                            <div class="tonal-step" style="background: #E1F3F5;">80%</div>
+                            <div class="tonal-step" style="background: #E9F6F7;">60%</div>
+                            <div class="tonal-step" style="background: #F0F9FA;">40%</div>
+                            <div class="tonal-step" style="background: #F8FCFC;">20%</div>
+                        </div>
+                    </div>
+
+                    <!-- BEGE -->
+                    <div class="tech-color-card">
+                        <div class="main-color-swatch" style="background: #F5F5F7; border: 1px solid rgba(0,0,0,0.05);"></div>
+                        <div class="tech-specs">
+                            <div><label>NAME</label><span>Bege Neutral</span></div>
+                            <div><label>HEX</label><span class="hex-value">#F5F5F7</span></div>
+                            <div><label>RGB</label><span>245 / 245 / 247</span></div>
+                            <div><label>CMYK</label><span>1 / 1 / 0 / 3</span></div>
+                        </div>
+                        <div class="tonal-strip">
+                            <div class="tonal-step" style="background: #F2F2F2;">80%</div>
+                            <div class="tonal-step" style="background: #E6E6E6;">60%</div>
+                            <div class="tonal-step" style="background: #D9D9D9;">40%</div>
+                            <div class="tonal-step" style="background: #CCCCCC;">20%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 21 USO DAS CORES (6.3) -->
+    <section id="color-usage">
+        <div class="sidebar-layout">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li>Sumário</li>
+                    <li>Introdução</li>
+                    <li>Estratégia</li>
+                    <li>Tom de Voz</li>
+                    <li>Logotipo</li>
+                    <li>Tipografia</li>
+                    <li class="active">Cores</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div style="margin-bottom: 40px;">
+                    <div style="font-size: 40px; font-weight: 700; color: var(--color-navy);">6.3</div>
+                    <h1 style="font-size: 32px;">USO DAS CORES</h1>
+                </div>
+                <p style="font-size: 14px; opacity: 0.6; margin-bottom: 40px;">As combinações devem respeitar a legibilidade e o equilíbrio visual.</p>
+
+                <div class="usage-contrast-grid">
+                    <div class="contrast-box" style="background: var(--color-teal);">
+                         <div class="contrast-circle" style="background: var(--color-gray-light);"></div>
+                    </div>
+                    <div class="contrast-box" style="background: var(--color-navy);">
+                         <div class="contrast-circle" style="background: var(--color-teal);"></div>
+                    </div>
+                    <div class="contrast-box" style="background: var(--color-navy);">
+                         <div class="contrast-circle" style="background: var(--color-teal-light);"></div>
+                    </div>
+                    <div class="contrast-box" style="background: var(--color-gray-light);">
+                         <div class="contrast-circle" style="background: var(--color-navy);"></div>
+                    </div>
+                    <div class="contrast-box" style="background: var(--color-navy);">
+                         <div class="contrast-circle" style="background: white;"></div>
+                    </div>
+                    <div class="contrast-box" style="background: var(--color-navy);">
+                         <div class="contrast-circle" style="background: var(--color-gray-light);"></div>
+                    </div>
+                    <div class="contrast-box" style="background: var(--color-teal);">
+                         <div class="contrast-circle" style="background: var(--color-navy);"></div>
+                    </div>
+                    <div class="contrast-box" style="background: var(--color-navy);">
+                         <div class="contrast-circle" style="background: var(--color-blue-soft);"></div>
+                    </div>
+                    <div class="contrast-box" style="background: var(--color-gray-light);">
+                         <div class="contrast-circle" style="background: var(--color-teal);"></div>
+                    </div>
+                    <div class="contrast-box" style="background: #ffffff; border: 1px solid rgba(0,0,0,0.05);">
+                         <div class="contrast-circle" style="background: var(--color-navy);"></div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; border-left: 2px solid var(--color-teal); padding-left: 20px; max-width: 600px;">
+                    <p style="font-size: 13px; line-height: 1.6; opacity: 0.7;">
+                        As cores devem ser aplicadas respeitando contraste e harmonia. Evite combinações que prejudiquem a leitura ou descaracterizem a identidade técnica da Spine Unit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 22 BRAND MESSAGE (07) -->
+    <section id="message">
+        <div class="organza-grid" style="align-items: center;">
+            <div style="grid-column: 3 / span 8; text-align: center;">
+                <div class="chapter-number">07</div>
+                <h1 style="font-size: 60px; line-height: 1.1;">A Spine Unit representa confiança, precisão e cuidado.</h1>
+                <p style="font-size: 21px; opacity: 0.7; margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Cada decisão é baseada em conhecimento profundo e responsabilidade com a vida do paciente.
+                    Nossa comunicação é clara, objetiva e acolhedora.
+                </p>
+                
+                <div style="margin-top: 80px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                    <img src="id/brandmark.png" style="width: 40px; opacity: 0.8;">
+                    <h2 style="font-family: var(--font-heading); font-size: 24px; letter-spacing: 4px; opacity: 0.5; font-weight: 400;">OBRIGADO!</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+</div>
+
+</div>
+
+<script>
+    // Intersection Observer for scroll animations and nav highlighting
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                
+                // Highlight nav link
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.style.opacity = link.getAttribute('href').substring(1) === id ? '1' : '0.4';
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Copy HEX functionality
+    const hexBlocks = document.querySelectorAll('.hex-value, .tonal-box');
+    hexBlocks.forEach(block => {
+        block.style.cursor = 'pointer';
+        block.title = 'Click to copy HEX';
+        block.addEventListener('click', () => {
+            const hex = block.innerText.includes('#') ? block.innerText : block.style.backgroundColor;
+            // Simplified for the demo: if it's a box with background, we just alert
+            const value = block.classList.contains('hex-value') ? block.innerText : 'Color Copied!';
+            
+            navigator.clipboard.writeText(block.innerText).then(() => {
+                const originalText = block.innerText;
+                block.innerText = 'COPIED!';
+                setTimeout(() => { block.innerText = originalText; }, 1000);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
