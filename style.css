@@ -552,21 +552,73 @@ h3 { font-family: var(--font-heading); font-size: var(--h3-size); font-weight: 5
 }
 
 /* --- Brand Switcher UI --- */
-.brand-switcher {
+.header-controls {
     position: fixed;
     top: 40px;
     right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 2000;
+}
+
+.brand-switcher {
     background: rgba(10, 31, 61, 0.1);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 100px;
     padding: 6px;
     display: flex;
     gap: 0;
-    z-index: 2000;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     transition: all 0.4s var(--transition-smooth);
     width: 380px; /* Fixed width for better centering control */
+}
+
+.download-pdf-btn-new {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 31, 61, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+    padding: 0 24px;
+    height: 50px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: white !important;
+    cursor: pointer;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s var(--transition-smooth);
+    text-decoration: none;
+}
+
+.download-pdf-btn-new svg {
+    transition: transform 0.3s ease;
+}
+
+.download-pdf-btn-new:hover svg {
+    transform: translateY(2px);
+}
+
+.header-controls[data-brand="spine"] .download-pdf-btn-new:hover {
+    background: var(--color-teal);
+    border-color: var(--color-teal);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(46, 196, 182, 0.3);
+}
+
+.header-controls[data-brand="sergio"] .download-pdf-btn-new:hover {
+    background: #C2A566;
+    border-color: #C2A566;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(194, 165, 102, 0.3);
 }
 
 .brand-switcher::before {
@@ -669,7 +721,7 @@ h3 { font-family: var(--font-heading); font-size: var(--h3-size); font-weight: 5
 
 @media print {
     /* Hide global navigation but keep editorial UI */
-    .download-pdf-btn, .side-nav, .nav-links {
+    .header-controls, .side-nav, .nav-links {
         display: none !important;
     }
 

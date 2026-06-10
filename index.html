@@ -48,10 +48,16 @@
     </style>
 </head>
 <body>
-    <!-- 🔄 BRAND SWITCHER (Top Right) -->
-    <div id="brand-switcher" class="brand-switcher" data-brand="spine">
-        <button class="switch-btn active" onclick="switchBrand('spine')">Spine Unit</button>
-        <button class="switch-btn" onclick="switchBrand('sergio')">Sérgio Salvador</button>
+    <!-- 🔄 HEADER CONTROLS (Top Right) -->
+    <div class="header-controls" id="header-controls" data-brand="spine">
+        <button class="download-pdf-btn-new" onclick="window.print()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Baixar brandbook final
+        </button>
+        <div id="brand-switcher" class="brand-switcher" data-brand="spine">
+            <button class="switch-btn active" onclick="switchBrand('spine')">Spine Unit</button>
+            <button class="switch-btn" onclick="switchBrand('sergio')">Sérgio Salvador</button>
+        </div>
     </div>
 
 <div id="spine-brandbook" class="brandbook-wrapper active">
@@ -2605,12 +2611,14 @@
 
     <script>
         function switchBrand(brand) {
+            const controls = document.getElementById('header-controls');
             const switcher = document.getElementById('brand-switcher');
             const spine = document.getElementById('spine-brandbook');
             const sergio = document.getElementById('sergio-brandbook');
             const btns = document.querySelectorAll('.switch-btn');
             
-            switcher.setAttribute('data-brand', brand);
+            if (controls) controls.setAttribute('data-brand', brand);
+            if (switcher) switcher.setAttribute('data-brand', brand);
             
             if (brand === 'spine') {
                 spine.classList.add('active');
